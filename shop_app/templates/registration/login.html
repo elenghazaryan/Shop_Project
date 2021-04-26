@@ -1,0 +1,16 @@
+{% extends 'shop_app/base.html' %}
+{% block content %}
+    <h1>Login Page</h1>
+    <br/>
+    {% if messages %}
+        {% for message in messages %}
+            <p>{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit"/>
+    </form>
+
+{% endblock %}

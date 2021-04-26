@@ -1,0 +1,286 @@
+{% extends 'shop_app/base.html' %}
+{% block content %}
+
+
+
+
+    <!--Body-->
+    <!--Breadcrumb-->
+
+    <div class="row mt-3">
+        <div class="col-md-6 d-md-block  pt-4 pb-2" id="secondrow">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'shop' %}">Cars</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'shop' %}">Sedan</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">2015 Ford Focus</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="col-md-6 d-md-block  justify-content-center pt-1" id="secondrow">
+            <form action="" class="form-inline col-12 col-md-auto pt-4 ml-auto">
+                <label for="sortBy" class="mr-2 pt-1 ml-auto col-md-auto d-md-block d-none">Sort By</label>
+                <select class="custom-select col-md-auto d-md-block d-none pt-1" id="sortBy">
+                    <option value="1">Price: Low to High</option>
+                    <option value="2">Price: High to Low</option>
+                    <option value="3">Latest</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <!--Breadcrumb-->
+
+
+    <!--Body-->
+    {% load static %}
+    <div class="row mt-4">
+        <div class="col-12 mb-2">
+            <h1 class=" font-weight-bold" id="ford">2015 Ford Focus </h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 col-md-6">
+            <div class="row">
+                <div class="col-3">
+                    <a class="border d-inline-block m-1 p-1" data-fancybox="gallery"
+                       href="{% static 'shop_app/images/1.png' %}"><img
+                            class="img-fluid" src="../../static/shop_app/images/1.png"></a>
+                    <a class="border d-inline-block m-1 p-1" data-fancybox="gallery"
+                       href="{% static 'shop_app/images/2.png' %}"><img
+                            class="img-fluid" src="../../static/shop_app/images/2.png"></a>
+                    <a class="border d-inline-block m-1 p-1" data-fancybox="gallery"
+                       href="{% static 'shop_app/images/3.png' %}"><img
+                            class="img-fluid" src="../../static/shop_app/images/3.png"></a>
+                    <a class="border d-inline-block m-1 p-1" data-fancybox="gallery"
+                       href="{% static 'shop_app/images/4.png' %}"><img
+                            class="img-fluid" src="../../static/shop_app/images/4.png"></a>
+                </div>
+                <div class="col">
+                    <a class="" data-fancybox="gallery" href="../../static/shop_app/images/5.png"><img class="img-fluid"
+                                                                                                       src="{% static 'shop_app/images/5.png' %}"></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="row">
+                <div class="col-12">
+                    <h3 class="font-weight-bold">$7,072</h3>
+                </div>
+            </div>
+            <form class="w-100 row" action="">
+                <div class="col-12 col-md-5">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Quantity</span>
+                        </div>
+                        <input type="text" class="form-control" aria-label="Sizing example input"
+                               aria-describedby="inputGroup-sizing-sm" value="1">
+                    </div>
+                </div>
+                <div class="col-12 col-md-6">
+                    <input class="btn " type="submit" value="Add To Cart" id="button">
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-12">
+                    <p class="font-weight-bold my-2">Options</p>
+                </div>
+                <div class="col-12">
+                    <form action="">
+                        <div class="custom-control custom-switch custom-control-inline">
+                            <input type="checkbox" id="mouse" name="customRadioInline1" class="custom-control-input">
+                            <label class="custom-control-label" for="mouse">Sedan</label>
+                        </div>
+                        <div class="custom-control custom-switch custom-control-inline">
+                            <input type="checkbox" id="earphone" name="customRadioInline1" class="custom-control-input">
+                            <label class="custom-control-label" for="earphone">Hatchback</label>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="accordion w-100" id="accordionExample">
+            <ul class="nav nav-tabs">
+                <li class="nav-item" id="headingOne">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                       aria-controls="collapseOne">Overview</a>
+                </li>
+                <li class="nav-item" id="headingTwo">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                       aria-controls="collapseTwo">Rating</a>
+                </li>
+                <li class="nav-item" id="headingThree">
+                    <a class="nav-link" href="#" data-toggle="collapse" data-target="#collapseThree"
+                       aria-expanded="false"
+                       aria-controls="collapseTwo">Review</a>
+                </li>
+            </ul>
+
+
+            <div class="card">
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
+                     data-parent="#accordionExample">
+                    <div class="card-body">
+                        <p class="font-weight-bold">Description</p>
+                        <ul>
+                            <li>Engine Name
+                                Engine: 4-Cyl Flex Fuel 2.0 Liter Duratec
+                            </li>
+                            <li>Trim:
+                                S Sedan
+                            </li>
+                            <li>Horsepower:
+                                160@6,500
+                            </li>
+                            <li>Body Style:
+                                Sedan
+                            </li>
+                            <li>Fuel:
+                                Unleaded Regular
+                            </li>
+                            <li>
+                                Transmission
+                                Transmission, 5 Speed Manual (MTX-75)
+                            </li>
+                            <li>Class:
+                                Compact Passenger Car
+                            </li>
+                            <li>Drivetrain:
+                                FWD
+                            </li>
+                            <li>Width:
+                                71.8
+                            </li>
+                            <li>
+                                Towing Capacity:
+                                N/R
+                            </li>
+                            <li>
+                                Transmission Type:
+                                Manual
+                            </li>
+
+
+                        </ul>
+                        Ford Motor Company (Ford) is recalling certain model year 2015 Ford Escape vehicles manufactured
+                        April 1, 2014, to June 12, 2015, Ford Focus vehicles manufactured June 17, 2014, to June 12,
+                        2015, and Ford C-Max vehicles manufactured April 22, 2014, to June 12, 2015. In the affected
+                        vehicles, the engine may continue to run after the key or the START/STOP engine button is turned
+                        to off. As such, these vehicles fail to comply with the requirements of Federal Motor Vehicle
+                        Safety Standard (FMVSS) number 114, "Theft Protection and Rollaway Prevention."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <span class="w-25">1★</span>
+                <div class="progress">
+                    <div class="progress-bar bg-danger" role="progressbar" style="width: 10%" aria-valuenow="10"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="w-25">2★</span>
+                <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="w-25">3★</span>
+                <div class="progress">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                         style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <span class="w-25">4★</span>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0"
+                         aria-valuemax="100"></div>
+                </div>
+                <span class="w-25">5★</span>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="100"
+                         aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+                <h6 class="card-header">Add Review</h6>
+                <div class="card-body">
+                    {% for message in messages %}
+                        <p class="text-success">{{ message }}</p>
+                    {% endfor %}
+                    <form method="post" action="{% url 'product' product.id %}">
+                        {% csrf_token %}
+                        <div class="form-group row">
+                            <label class="col-md-2">Review<span class="text-danger">*</span></label>
+                            <div class="col-md-10">
+                                <textarea class="form-control" name="message" required></textarea>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-primary"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+{#    for previous reviews#}
+    <div class="card my-4">
+        <h6 class="card-header">Reviews</h6>
+        <div class="card-body">
+            {% for review in reviews %}
+                <blockquote class="blockquote text-right">
+                    <p class="mb-0">{{ review.review }}</p>
+                    <br/>
+                    <footer class="blockquote-footer">{{ review.user.name }} <cite
+                            title="Source Title">{{ review.user.email }}</cite></footer>
+                </blockquote>
+                <hr/>
+            {% endfor %}
+        </div>
+    </div>
+
+        <div class="row d-md-block d-none">
+            <div class="d-flex justify-content-center">
+                <h2 class="mx-auto pt-4" id="ford">Recommendations</h2>
+            </div>
+            <div class="col-md-12 d-md-block col d-flex justify-content-space-around">
+                <div class="d-flex mt-3 border-top">
+                    <div class="card col-md-3 d-md-block d-none mx-auto mt-5 d-flex justify-content-center"
+                         style="width: 24rem;">
+                        <img src="https://trek.scene7.com/is/image/TrekBicycleProducts/EmondaSL7DisceTap_21_32564_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+                             class="card-img-top" alt="...">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="#" class="card-link">Emonda SL 7 eTap</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 d-md-block d-none mx-auto mt-5" style="width: 24rem;">
+                        <img src="https://trek.scene7.com/is/image/TrekBicycleProducts/EmondaALR5Disc_20_24166_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+                             class="card-img-top" alt="...">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="#" class="card-link">Emonda ALR 5</a>
+                        </div>
+                    </div>
+                    <div class="card col-md-3 d-md-block d-none mx-auto mt-5" style="width: 24rem;">
+                        <img src="https://trek.scene7.com/is/image/TrekBicycleProducts/EmondaSL6Disc_20_28037_A_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+                             class="card-img-top" alt="...">
+                        <div class="card-body d-flex justify-content-center">
+                            <a href="#" class="card-link">Emonda SL 6 Disc</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

@@ -1,0 +1,44 @@
+#firstrow, #thirdrow, #help{
+	background-color: #4f313d;
+}
+
+#text, #navbarDropdown, #dropdownMenuLink{
+	color: #faeccd;
+	font-family: Arial, Helvetica, sans-serif;
+
+
+}
+
+#button, #bt1,#sortBy{
+	background-color: #999282;
+}
+
+#secondrow{
+	background-color: white;
+}
+
+#thirdrow{
+	align-items: center;
+	justify-content: center;
+}
+
+ 
+
+#help{
+	justify-content: space-around;
+	align-items: center;
+	background-color: white; 
+}
+
+#bk{
+	background-color: gray
+}
+
+#ford{
+	color: #4f313d;
+}
+
+#helptext{
+ color: black;
+}
+

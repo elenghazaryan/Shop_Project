@@ -1,0 +1,56 @@
+{% extends 'shop_app/base.html' %}
+{% block content %}
+
+<!--Body-->
+
+<div class="row mt-3">
+<div class="col-md-6 d-md-block  pt-4 pb-2" id="secondrow">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+{#        <li class="breadcrumb-item"><a href="{% url 'cart' %}">Cart</a></li>#}
+        <li class="breadcrumb-item"><a href="{% url 'shipping' %}">Shipping</a></li>
+        <li class="breadcrumb-item active" aria-current="page" >Payment</li>
+      </ol>
+    </nav>
+</div>
+
+<div class="col-md-6 d-md-block  justify-content-center pt-1" id="secondrow">
+        <form action="" class="form-inline col-12 col-md-auto pt-4 ml-auto">
+            <label for="sortBy" class="mr-2 pt-1 ml-auto col-md-auto d-md-block d-none">Sort By</label>
+            <select class="custom-select col-md-auto d-md-block d-none pt-1" id="sortBy">
+                <option value="1">Price: Low to High</option>
+                <option value="2">Price: High to Low</option>
+                <option value="3">Latest</option>
+            </select>
+        </form>
+</div>
+</div>
+<!--Breadcrumb-->
+
+
+
+<h3 class="m-0 p-3 font-weight-bold alert-secondary d-flex justify-content-center " id="ford">Payment</h3>
+<div class="container-fluid border-white border">
+<h6 class="m-0 p-3 font-weight-bold d-flex justify-content-center">Credit card</h6>
+<div class="row justify-content-center">
+<img src="http://www.emporium.themeseason.com/assets/images/others/card-icon.png">
+</div>
+  <div class="form-group d-md-flex justify-content-around">
+    <input type="text" class="form-control  mt-2  " placeholder="Card Holder Name*">
+    <input type="text" class="form-control  mt-2  " placeholder="Card Number*">
+  </div>
+  <div class="form-group d-md-flex justify-content-around">
+    <input type="number" class="form-control  mt-2  " placeholder="Expiration Month*">
+    <input type="number" class="form-control  mt-2  " placeholder="Expiration Year*">
+    <input type="text" class="form-control  mt-2  " placeholder="CVV*">
+  </div>
+<div class="row d-flex justify-content-end">
+  <button type="button" class="btn btn-outline-primary mr-3 mb-3 mt-3"><a href="{% url 'order' %}" class="text-dark">Order</a></button>
+</div>
+</div>
+
+
+
+
+{% endblock %}

@@ -1,0 +1,75 @@
+{% extends  'shop_app/base.html' %}
+{% block content %}
+
+    <!--Body-->
+
+    <div class="row mt-3">
+        <div class="col-md-6 d-md-block  pt-4 pb-2" id="secondrow">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Cart</li>
+                </ol>
+            </nav>
+        </div>
+
+        <div class="col-md-6 d-md-block  justify-content-center pt-1" id="secondrow">
+            <form action="" class="form-inline col-12 col-md-auto pt-4 ml-auto">
+                <label for="sortBy" class="mr-2 pt-1 ml-auto col-md-auto d-md-block d-none">Sort By</label>
+                <select class="custom-select col-md-auto d-md-block d-none pt-1" id="sortBy">
+                    <option value="1">Price: Low to High</option>
+                    <option value="2">Price: High to Low</option>
+                    <option value="3">Latest</option>
+                </select>
+            </form>
+        </div>
+    </div>
+    <!--Breadcrumb-->
+
+
+    <div class="container-fluid">
+
+        <h3 id="ford" class=" d-flex justify-content-center">Cart</h3>
+        <table class="table">
+            {% for cart_item in products_in_cart %}
+{#            {% if products_in_cart %}#}
+                <tr>
+                    <th scope="col">Num</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+
+                <tr>
+                    <th scope="row">{{ cart_item.id }}</th>
+                    <td class="d-flex"><img
+                            src="https://trek.scene7.com/is/image/TrekBicycleProducts/EmondaSL7DisceTap_21_32564_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+                            width="50px" class="border d-none d-md-block "><a href="{% url 'product' cart_item.id %}"
+                                                                              class=" text-dark ml-3">{{ cart_item.name }}</a>
+                    </td>
+                    <td>{{ cart_item.price }}</td>
+                    <td>1</td>
+                </tr>
+            {% endfor %}
+{#            {% endfor %}#}
+            {#    <tr>#}
+            {#      <th scope="row">2</th>#}
+            {#      <td class="d-flex"><img src="https://www.bordermotorgroup.co.uk/uploads/images/products/large/border-motor-group-ford-ford-focus-st-3-turbo-1580576430-0.jpg" width="50px" class="border d-none d-md-block "><a href="{% url 'product' %}" class=" text-dark ml-3">BMW M4</a></td>#}
+            {#      <td>$1055</td>#}
+            {#      <td>1</td>#}
+            {#    </tr>#}
+            {#    <tr>#}
+            {#      <th scope="row">3</th>#}
+            {#      <td class="d-flex"><img src="https://trek.scene7.com/is/image/TrekBicycleProducts/EmondaALR5Disc_20_24166_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360" width="50px" class="border d-none d-md-block "><a href="product.html"class=" text-dark ml-3">Emonda ALR 5</a></td>#}
+            {#      <td>$1500</td>#}
+            {#      <td>1</td>#}
+            {#    </tr>#}
+        </table>
+        <div class="row d-flex justify-content-end">
+            <button type="button" class="btn mr-3 mb-3 mt-3 text-dark" id="button"><a href="{% url 'shipping' %}"
+                                                                                      class="text-light">CHECKOUT</a>
+            </button>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,119 @@
+{% extends 'shop_app/base.html' %}
+{% block content %}
+
+    <!--Body-->
+
+    <div class="container-fluid">
+        <h3 id="ford">My Orders</h3>
+        <table class="table">
+            {% for order in orders %}
+
+                <tr>
+                    <th scope="col">Num</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+                <tr>
+                }
+                    <th scope="row">{{ order.id }}</th>
+                    <td class="d-flex"><img
+                            src="https://trek.scene7.com/is/image/TrekBicycleProducts/EmondaSL7DisceTap_21_32564_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+                            width="50px" class="border d-none d-md-block "><a href="product.html"
+                                                                              class=" text-dark ml-3">{{ order.order_name }}</a>
+                    </td>
+                    <td>{{ order.price }}</td>
+                    <td>{{ order.quantity }}</td>
+                </tr>
+            {% endfor %}
+            {#    <tr>#}
+            {#      <th scope="row">2</th>#}
+            {#      <td class="d-flex"><img src="https://www.motortrend.com/uploads/sites/10/2015/11/2015-ford-fusion-energi-titanium-sedan-angular-front.png" width="50px" class="border d-none d-md-block "><a href="product.html"class=" text-dark ml-3">2015 Ford Fusion</a></td>#}
+            {#      <td>$10,796</td>#}
+            {#      <td>1</td>#}
+            {#    </tr>#}
+            {#    #}
+
+        </table>
+        <h3 id="ford">Wishlist</h3>
+        <table class="table">
+            {% for order in orders %}
+
+                <tr>
+                    <th scope="col">Num</th>
+                    <th scope="col">Product</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Quantity</th>
+                </tr>
+                <tr>
+                    <th scope="row">{{ order.id }}</th>
+                    <td class="d-flex"><img
+                            src="https://trek.scene7.com/is/image/TrekBicycleProducts/EmondaSL7DisceTap_21_32564_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+                            width="50px" class="border d-none d-md-block "><a href="product.html"
+                                                                              class=" text-dark ml-3">{{ order.order_name }}</a>
+                    </td>
+                    <td>{{ order.price }}</td>
+                    <td>{{ order.quantity }}</td>
+                </tr>
+            {% endfor %}
+                <tr>
+                  <th scope="row">2</th>
+                  <td class="d-flex"><img src="https://www.bordermotorgroup.co.uk/uploads/images/products/large/border-motor-group-ford-ford-focus-st-3-turbo-1580576430-0.jpg" width="50px" class="border d-none d-md-block "><a href="product.html"class=" text-dark ml-3">BMW M4</a></td>
+                  <td>$1055</td>
+                  <td>1</td>
+                </tr>
+                <tr>
+                  <th scope="row">3</th>
+                  <td class="d-flex"><img src="https://trek.scene7.com/is/image/TrekBicycleProducts/EmondaALR5Disc_20_24166_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360" width="50px" class="border d-none d-md-block "><a href="product.html"class=" text-dark ml-3">Emonda ALR 5</a></td>
+                  <td>$1500</td>
+                  <td>1</td>
+                </tr>
+        </table>
+
+
+        <h3 class="text-muted ">Recent</h3>
+        <div class="row m-0">
+        {% if product %}
+            <div class="card col-12 col-sm-6 col-md-4 col-lg-3 p-1">
+                <img class="card-img-top pl-3 img-fluid"
+                     src="https://trek.scene7.com/is/image/TrekBicycleProducts/EmondaALR5Disc_20_24166_B_Primary?$responsive-pjpg$&cache=on,on&wid=480&hei=360"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title pl-4">Emonda ALR 5</h5>
+                    <a href="{% url 'product' product.id %}" class="btn btn-dark ml-4">Learn More</a>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-md-4 col-lg-3 p-1">
+                <img class="card-img-top pl-3 img-fluid"
+                     src="https://www.bordermotorgroup.co.uk/uploads/images/products/large/border-motor-group-ford-ford-focus-st-3-turbo-1580576430-0.jpg"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title pl-4">BMW M4</h5>
+                    <a href="{% url 'product' product.id %}" class="btn btn-dark ml-4">Learn More</a>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-md-4 col-lg-3 p-1">
+                <img class="card-img-top pl-3 img-fluid"
+                     src="https://www.motortrend.com/uploads/sites/10/2015/11/2015-ford-fusion-energi-titanium-sedan-angular-front.png"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title pl-4">2015 Ford Fusion</h5>
+                    <a href="{% url 'product' product.id %}" class="btn btn-dark ml-4">Learn More</a>
+                </div>
+            </div>
+            <div class="card col-12 col-sm-6 col-md-4 col-lg-3 p-1">
+                <img class="card-img-top pl-3 img-fluid"
+                     src="https://www.motortrend.com/uploads/sites/10/2015/11/2015-ford-fusion-energi-titanium-sedan-angular-front.png"
+                     alt="Card image cap">
+                <div class="card-body">
+                    <h5 class="card-title pl-4">2015 Ford Fusion</h5>
+                    <a href="{% url 'product' product.id %}" class="btn btn-dark ml-4">Learn More</a>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    </div>
+
+
+{% endblock %}
+

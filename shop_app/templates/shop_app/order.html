@@ -1,0 +1,77 @@
+{% extends 'shop_app/base.html' %}
+{% block content %}
+
+<!--Body-->
+
+<div class="row mt-3">
+<div class="col-md-6 d-md-block  pt-4 pb-2" id="secondrow">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+{#        <li class="breadcrumb-item"><a href="{% url 'cart' %}">Cart</a></li>#}
+        <li class="breadcrumb-item"><a href="{% url 'shipping' %}">Shipping</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'payment' %}">Payment</a></li>
+        <li class="breadcrumb-item active" aria-current="page" >Order</li>
+      </ol>
+    </nav>
+</div>
+
+<div class="col-md-6 d-md-block  justify-content-center pt-1" id="secondrow">
+        <form action="" class="form-inline col-12 col-md-auto pt-4 ml-auto">
+            <label for="sortBy" class="mr-2 pt-1 ml-auto col-md-auto d-md-block d-none">Sort By</label>
+            <select class="custom-select col-md-auto d-md-block d-none pt-1" id="sortBy">
+                <option value="1">Price: Low to High</option>
+                <option value="2">Price: High to Low</option>
+                <option value="3">Latest</option>
+            </select>
+        </form>
+</div>
+</div>
+<!--Breadcrumb-->
+
+<h3 class="m-0 p-3 font-weight-bold alert-secondary d-flex justify-content-center " id="ford">Review Order</h3>
+<div class="container-fluid border-white border">
+
+<h3 class=" border-bottom" id="ford">Billing information</h3>
+<table class="table">
+    <tr class="d-flex justify-content-around">
+      <th scope="col">Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+    </tr>
+    <tr class="d-flex justify-content-around">
+      <td>Elen</td>
+      <td>elen@gmail.com</td>
+      <td>+37455555555</td>
+    </tr>
+</table>
+<table class="table">
+    <tr class="d-flex justify-content-around">
+      <th scope="col">City</th>
+      <th scope="col">Address</th>
+      <th scope="col">Postal Code</th>
+    </tr>
+    <tr class="d-flex justify-content-around">
+      <td>Yerevan</td>
+      <td>Komitas</td>
+      <td>0002</td>
+    </tr>
+</table>
+<h3 class="mt-2 border-bottom" id="ford">Payment information</h3>
+<div class="d-flex">
+<span _ngcontent-rwd-c185="" class="text-muted mr-1">Card number:</span>
+<b>XXX-XXXX-XXX-XXX</b>
+</div>
+<div _ngcontent-rwd-c185="" fxlayout="row" fxlayoutalign="center center" class="p-1 ng-star-inserted mt-3" style="flex-direction: row; box-sizing: border-box; display: flex; place-content: center; align-items: center;">
+  <h2 _ngcontent-rwd-c185="">
+    <span _ngcontent-rwd-c185="" class="text-muted mr-1">Total Price:</span>
+    <span _ngcontent-rwd-c185="">$10050.0</span>
+  </h2>
+</div>
+<div class="row d-flex justify-content-end">
+  <button type="button" class="btn btn-outline-primary mr-3 mb-3 mt-3"><a href="{% url 'thanks' %}" class="text-dark">Place Order</a></button>
+</div>
+</div>
+
+
+{% endblock %}

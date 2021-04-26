@@ -1,0 +1,307 @@
+{% extends 'shop_app/base.html' %}
+{% block content %}
+
+
+<!--Body-->
+<!--Breadcrumb-->
+
+<div class="row mt-3">
+<div class="col-md-6 d-md-block  pt-4 pb-2" id="secondrow">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Home</a></li>
+        <li class="breadcrumb-item"><a href="{% url 'index' %}">Cars</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Sedan</li>
+      </ol>
+    </nav>
+</div>
+
+<div class="col-md-6 d-md-block  justify-content-center pt-1" id="secondrow">
+        <form action="" class="form-inline col-12 col-md-auto pt-4 ml-auto">
+            <label for="sortBy" class="mr-2 pt-1 ml-auto col-md-auto d-md-block d-none">Sort By</label>
+            <select class="custom-select col-md-auto d-md-block d-none pt-1" id="sortBy">
+                <option value="1">Price: Low to High</option>
+                <option value="2">Price: High to Low</option>
+                <option value="3">Latest</option>
+            </select>
+        </form>
+</div>
+</div>
+<!--Breadcrumb-->
+
+
+
+
+
+<!--Collapse-->
+
+
+<div class="row border-top">
+        <div class="d-none d-md-block col-md-3 sidebar bg-light border-right border-left border-bottom">
+            <form>
+                <p>
+                    <a class="text-muted text-uppercase text-decoration-none" data-toggle="collapse" href="#select" role="button"
+                       aria-expanded="false" aria-controls="select11">
+                        Choose category:
+                    </a>
+                </p>
+                <div class="collapse bg-light p-2" id="select">
+                    <div>
+                        <input type="checkbox" id="Cars">
+                        <label class="text-dark text-uppercase" for="Cars">Cars</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="Bikes">
+                        <label class="text-dark text-uppercase" for="Bikes">Bikes</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="Motorcycles">
+                        <label class="text-dark text-uppercase" for="Motorcycles">Motorcycles</label>
+                    </div>
+                </div>
+                <p class="border-bottom">
+                    <a class="text-muted text-uppercase border-bottom text-decoration-none" data-toggle="collapse" href="#select2" role="button"
+                       aria-expanded="false" aria-controls="select22">
+                        Choose Model:
+                    </a>
+                </p>
+                <div class="collapse bg-light p-2" id="select2">
+                    <div>
+                        <input type="checkbox" id="Ford">
+                        <label class="text-dark text-uppercase" for="Ford">Ford</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="Trek">
+                        <label class="text-dark text-uppercase" for="Trek">Trek</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="BMW">
+                        <label class="text-dark text-uppercase" for="BMW">BMW</label>
+                    </div>
+                </div>
+                <p class="border-bottom">
+                    <a class="text-muted text-uppercase text-decoration-none" data-toggle="collapse" href="#select3" role="button"
+                       aria-expanded="false" aria-controls="select33">
+                        Choose Color:
+                    </a>
+                </p>
+                <div class="collapse bg-light p-2" id="select3">
+                    <div>
+                        <input type="checkbox" id="Silver">
+                        <label class="text-dark text-uppercase" for="Silver">Silver</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="Blue">
+                        <label class="text-dark text-uppercase" for="Blue">Blue</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="White">
+                        <label class="text-dark text-uppercase" for="White">White</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="Purple">
+                        <label class="text-dark text-uppercase" for="Purple">Purple</label>
+                    </div>
+                </div>
+                <p class="border-bottom">
+                    <a class="text-muted text-uppercase text-decoration-none" data-toggle="collapse" href="#select4" role="button"
+                       aria-expanded="false" aria-controls="select44">
+                        Choose shipment country:
+                    </a>
+                </p>
+                <div class="collapse bg-light p-2" id="select4">
+                    <div>
+                        <input type="checkbox" id="Armenia">
+                        <label class="text-dark text-uppercase" for="Armenia">Armenia</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="Italy">
+                        <label class="text-dark text-uppercase" for="Italy">Italy</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="Georgia">
+                        <label class="text-dark text-uppercase" for="Georgia">Georgia</label>
+                    </div>
+                </div>
+                
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="Bid">
+                    <label class="custom-control-label text-muted text-uppercase" for="Bid">Bid</label>
+                </div>
+                 <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="BuyItNow">
+                    <label class="custom-control-label text-muted text-uppercase" for="BuyItNow">Buy It Now</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="freeShip">
+                    <label class="custom-control-label text-muted text-uppercase" for="freeShip">Free Shipping</label>
+                </div>
+            </form>
+        </div>
+
+
+
+      <!--Right Side products-->
+        <div class="col-12 col-md-9 main border-right border-left">
+            <div class="row justify-content-center">
+                <div class="col-6 col-sm-6 col-md-12 product-card border p-2">
+                    <div class="row align-items-center">
+                        {% for product in products %}
+                        <div class="col-12 col-md-4 col-lg-3">
+                            <a href="{% url 'product' product.id %}"><img class="w-100" src="https://www.motortrend.com/uploads/sites/10/2015/11/2015-ford-focus-se-sedan-angular-front.png" alt="">
+                            </a>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-6">
+                            <h4 id="ford"><a href="{% url 'product' product.id %}" class="text-decoration-none" id="ford"s>{{ product.name }}</a>
+                            </h4>
+                            <ul class="d-none d-lg-block">
+                                <li>Class: Compact Passenger Car,</li>
+                                <li>Sitting: 5/5,</li>
+                                <li>Width: 71.8,</li>
+                                <li>Engine Type: Ethanol/Gas.</li>
+                            </ul>
+                        </div>
+                        <div class="col-12 col-md-4 col-lg-3 text-center h-100">
+                            <div class="display-4">${{ product.price}}</div>
+                            <a href="{% url 'cart' product.id %}" class="btn btn-primary ml-4">Add to Cart</a>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+{##}
+{#                <div class="col-6 col-sm-6 col-md-12 product-card border p-2">#}
+{#                    <div class="row align-items-center">#}
+{#                        <div class="col-12 col-md-4 col-lg-3">#}
+{#                           <a href="{% url 'product' %}"><img class="w-100" src="https://www.motortrend.com/uploads/sites/10/2015/11/2015-ford-fusion-energi-titanium-sedan-angular-front.png" alt="">#}
+{#                           </a>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-6">#}
+{#                            <h4><a href="{% url 'product' %}" class="text-decoration-none" id="ford">2015 Ford Fusion</a>#}
+{#                            </h4>#}
+{#                            <ul class="d-none d-lg-block">#}
+{#                                <li>Class: Passenger Car,</li>#}
+{#                                <li>Sitting: 5/5,</li>#}
+{#                                <li>Width: 75.2,</li>#}
+{#                                <li>Engine Type: Gas/Electric.</li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-3 text-center h-100">#}
+{#                            <div class="display-4">$10,796</div>#}
+{#                            <a href="{% url 'cart' %}" class="btn btn-primary ml-4">Add to Cart</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{##}
+{#                <div class="col-6 col-sm-6 col-md-12 product-card border p-2">#}
+{#                    <div class="row align-items-center">#}
+{#                        <div class="col-12 col-md-4 col-lg-3">#}
+{#                           <a href="{% url 'product' %}"><img class="w-100" src="https://www.motortrend.com/uploads/sites/10/2015/11/2015-ford-fusion-energi-titanium-sedan-angular-front.png" alt="">#}
+{#                           </a>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-6">#}
+{#                            <h4><a href="{% url 'product' %}" class="text-decoration-none" id="ford">2015 Ford Fusion</a>#}
+{#                            </h4>#}
+{#                            <ul class="d-none d-lg-block">#}
+{#                                <li>Class: Passenger Car,</li>#}
+{#                                <li>Sitting: 5/5,</li>#}
+{#                                <li>Width: 75.2,</li>#}
+{#                                <li>Engine Type: Gas/Electric.</li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-3 text-center h-100">#}
+{#                            <div class="display-4">$10,796</div>#}
+{#                            <a href="{% url 'cart' %}" class="btn btn-primary ml-4">Add to Cart</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="col-6 col-sm-6 col-md-12 product-card border p-2">#}
+{#                    <div class="row align-items-center">#}
+{#                        <div class="col-12 col-md-4 col-lg-3">#}
+{#                           <a href="{% url 'product' %}"><img class="w-100" src="https://www.motortrend.com/uploads/sites/10/2015/11/2015-ford-fusion-energi-titanium-sedan-angular-front.png" alt="">#}
+{#                           </a>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-6">#}
+{#                            <h4><a href="{% url 'product' %}" class="text-decoration-none" id="ford">2015 Ford Fusion</a>#}
+{#                            </h4>#}
+{#                            <ul class="d-none d-lg-block">#}
+{#                                <li>Class: Passenger Car,</li>#}
+{#                                <li>Sitting: 5/5,</li>#}
+{#                                <li>Width: 75.2,</li>#}
+{#                                <li>Engine Type: Gas/Electric.</li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-3 text-center h-100">#}
+{#                            <div class="display-4">$10,796</div>#}
+{#                            <a href="{% url 'cart' %}" class="btn btn-primary ml-4">Add to Cart</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{##}
+{#                <div class="col-6 col-sm-6 col-md-12 product-card border p-2">#}
+{#                    <div class="row align-items-center">#}
+{#                        <div class="col-12 col-md-4 col-lg-3">#}
+{#                           <a href="{% url 'product' %}"><img class="w-100" src="https://www.motortrend.com/uploads/sites/10/2015/11/2015-ford-fusion-energi-titanium-sedan-angular-front.png" alt="">#}
+{#                           </a>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-6">#}
+{#                            <h4><a href="{% url 'product' %}" class="text-decoration-none" id="ford">2015 Ford Fusion</a>#}
+{#                            </h4>#}
+{#                            <ul class="d-none d-lg-block">#}
+{#                                <li>Class: Passenger Car,</li>#}
+{#                                <li>Sitting: 5/5,</li>#}
+{#                                <li>Width: 75.2,</li>#}
+{#                                <li>Engine Type: Gas/Electric.</li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-3 text-center h-100">#}
+{#                            <div class="display-4">$10,796</div>#}
+{#                            <a href="{% url 'cart' %}" class="btn btn-primary ml-4">Add to Cart</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="col-6 col-sm-6 col-md-12 product-card border p-2">#}
+{#                    <div class="row align-items-center">#}
+{#                        <div class="col-12 col-md-4 col-lg-3">#}
+{#                           <a href="{% url 'product' %}"><img class="w-100" src="https://www.motortrend.com/uploads/sites/10/2015/11/2015-ford-fusion-energi-titanium-sedan-angular-front.png" alt="">#}
+{#                           </a>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-6">#}
+{#                            <h4><a href="{% url 'product' %}" class="text-decoration-none" id="ford">2015 Ford Fusion</a>#}
+{#                            </h4>#}
+{#                            <ul class="d-none d-lg-block">#}
+{#                                <li>Class: Passenger Car,</li>#}
+{#                                <li>Sitting: 5/5,</li>#}
+{#                                <li>Width: 75.2,</li>#}
+{#                                <li>Engine Type: Gas/Electric.</li>#}
+{#                            </ul>#}
+{#                        </div>#}
+{#                        <div class="col-12 col-md-4 col-lg-3 text-center h-100">#}
+{#                            <div class="display-4">$10,796</div>#}
+{#                            <a href="{% url 'cart' %}" class="btn btn-primary ml-4">Add to Cart</a>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                </div>#}
+
+
+                <nav class="col-12 mt-2">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="shop.html">Previous</a>
+                        </li>
+                        <li class="page-item active"><a class="page-link" href="{% url 'shop' %}">1</a></li>
+                        <li class="page-item"><a class="page-link" href="{% url 'shop' %}">2</a></li>
+                        <li class="page-item"><a class="page-link" href="{% url 'shop' %}">3</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="{% url 'shop' %}">Next</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'shop_app/base.html' %}
+{% block content %}
+<!--Body-->
+<!--Acc Settings-->
+
+<div class="container">
+  <h3 class="m-0 p-3 font-weight-bold alert-secondary d-flex justify-content-center " id="ford">Account Settings</h3>
+  <div class="card mb-3" >
+  <div class="row no-gutters">
+    <div class="col-md-4">
+      <img src="https://virl.bc.ca/wp-content/uploads/2019/01/AccountIcon2.png" class="card-img" alt="">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h5 class="card-title">Name: Elen</h5>
+        <p class="card-text">Phone: +37455555555</p>
+        <h5 class="card-title"><a href="{% url 'my_orders' %}" class="text-dark"> Show My Wishlist ></a></h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!--Address-->
+<h3 class="m-0 p-3  mt-3 font-weight-bold alert-secondary d-flex justify-content-center " id="ford">Address</h3>
+  <div class="card mb-3" >
+    <div class="row ">
+      <div class="col-md-6">
+        <div class="card-body justify-content-center">
+          <h5 class="card-title">Country: Armenia</h5>
+          <h5 class="card-title">City: Yerevan</h5>
+          <h5 class="card-title">Postal Code: 0002</h5>
+          <h5 class="card-title">Street: Komitas</h5>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group ">
+          <input type="text" class="form-control w-75 ml-3 mt-2  " placeholder="Country">
+          <input type="text" class="form-control w-75 ml-3 mt-2  " placeholder="City">
+          <input type="text" class="form-control w-75 ml-3 mt-2  " placeholder="Postal Code">
+          <input type="text" class="form-control w-75 ml-3 mt-2  " placeholder="Street">
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!--Payment Info-->
+<h3 class="m-0 p-3  mt-3 font-weight-bold alert-secondary d-flex justify-content-center " id="ford">Payment Information</h3>
+  <div class="card mb-3" >
+    <div class="row no-gutters">
+      <div class="col-md-6">
+        <div class="card-body justify-content-center">
+          <h5 class="card-title">Card Number: XXX-XXX-XXX</h5>
+          <h5 class="card-title">CVV:  ****</h5>
+          <h5 class="card-title">Card holder name: XXXXXXX</h5>
+          <h5 class="card-title">Validation Data: 15/05</h5>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group ">
+          <input type="text" class="form-control w-75 ml-3 mt-2  " placeholder="Card">
+          <input type="text" class="form-control w-75 ml-3 mt-2  " placeholder="CVV">
+          <input type="text" class="form-control w-75 ml-3 mt-2  " placeholder="Holder Name">
+          <input type="text" class="form-control w-75 ml-3 mt-2  " placeholder="Validation Data">
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+{% endblock %}
